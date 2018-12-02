@@ -3,3 +3,4 @@
 ## Option 2: Pymaceuticals Inc
 
 * Solution in Solved_pymaceuticals.ipynb
+* Saved plots in plots directory

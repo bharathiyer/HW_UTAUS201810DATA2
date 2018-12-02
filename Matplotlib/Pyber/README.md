@@ -3,3 +3,4 @@
 ## Option 1: Pyber
 
 * Solution in Solved_Pyber.ipynb
+* Saved plots in plots directory
