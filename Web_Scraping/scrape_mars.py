@@ -81,12 +81,15 @@ def scrape_weather(brwsr):
     # Get list of tweets
     tlist = wsoup.find_all("li", class_="js-stream-item")
     wtext = None
+    wkeywords = {'Sol', 'pressure', 'daylight'}
 
     # Loop through and find the most recent weather tweet
     for t in tlist:
         if t.div["data-screen-name"] == "MarsWxReport":
-            wtext = t.find(class_="tweet-text").a.previousSibling
-            break
+            mwtext = t.find(class_="tweet-text").a.previousSibling
+            if wkeywords.issubset(set(mwtext.split())):
+                wtext = mwtext
+                break
 
     return wtext
 # def scrape_weather(brwsr)
@@ -113,6 +116,7 @@ def scrape_facts(brwsr):
 
     # Strip unwanted newlines to clean up the table.
     fhtml = fhtml.replace('\n', '')
+
     return fhtml
 # def scrape_facts(brwsr)
 
@@ -136,7 +140,8 @@ def scrape_hemisphere(b, num):
 
     # Save title and url in dict
     imgdict = dict()
-    imgdict["title"] = soup.find("h2", class_="title").text.strip("Enhanced").strip()
+    imgdict["title"] = soup.find(
+        "h2", class_="title").text.strip("Enhanced").strip()
     imgdict["url"] = soup.find("div", class_="downloads").ul.li.a["href"]
 
     # Go back to previous page
