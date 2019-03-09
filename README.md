@@ -16,4 +16,5 @@ Individual homework solutions are in the appropriate folder.
 10: Web Scraping and Mongo Homework	Web_Scraping
 11: Javascript Homework			Javascript
 12: Plotly Homework			Plotly
+13: D3.js Homework			D3
 
