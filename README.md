@@ -17,4 +17,5 @@ Individual homework solutions are in the appropriate folder.
 11: Javascript Homework			Javascript
 12: Plotly Homework			Plotly
 13: D3.js Homework			D3
+14: Geo-Mapping Homework		Leaflet
 
